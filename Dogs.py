@@ -45,7 +45,8 @@ def prog():
     progress.start(30)
     window.after(3000,show_image)
 
-
+def dell():
+    notebook.forget()
 
 
 window = Tk()
@@ -61,15 +62,20 @@ button.pack(padx=10, pady=10)
 progress=ttk.Progressbar(mode="determinate", length=300)
 progress.pack(padx=10, pady=10)
 
+button1 = ttk.Button(text="Очистить вкладки", command=dell)
+button1.pack(padx=10, pady=10)
+
 width_label = ttk.Label(text="Ширина:")
 width_label.pack(side='left', padx=(10, 0))
 width_spinbox = ttk.Spinbox(from_=200, to=500, increment=50, width=5)
 width_spinbox.pack(side='left', padx=(0, 10))
+width_spinbox.set(300)
 
 height_label = ttk.Label(text="Высота:")
 height_label.pack(side='left', padx=(10, 0))
 height_spinbox = ttk.Spinbox(from_=200, to=500, increment=50, width=5)
 height_spinbox.pack(side='left', padx=(0, 10))
+height_spinbox.set(300)
 
 top_level_window=Toplevel(window)
 top_level_window.title("Изображение собачек")
